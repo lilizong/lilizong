@@ -1,0 +1,37 @@
+' lilizong@gmail.com
+' 作者： 李立宗
+Private Sub Command1_Click()
+Const r = 1000000
+Dim a(r, 4) As Integer
+Randomize
+Form1.FontSize = 40
+For i = 1 To r
+   
+    For j = 1 To 2
+        a(i, j) = Int(-100 + Rnd * (100 - (-100) + 1))
+       
+    Next
+Next
+
+For i = 1 To r
+    a(i, 3) = Sqr(a(i, 1) ^ 2 + a(i, 2) ^ 2)
+Next
+
+
+
+For i = 1 To r
+    If a(i, 3) <= 100 Then a(i, 4) = 1
+Next
+
+'For i = 1 To 10
+'    Print a(i, 1); a(i, 2); a(i, 3); a(i, 4)
+'Next
+
+Sum = 0
+For i = 1 To r
+    Sum = Sum + a(i, 4)
+Next
+
+Print "π的值是："; 4 * Sum / r
+
+End Sub
