@@ -1,0 +1,18 @@
+N<-10000
+a<-matrix(nrow=N,ncol=4)
+for(i in 1:N)
+{
+  a[i,1]<-runif(1,0,1)
+  a[i,2]<-runif(1,0,1)
+  a[i,3]<-sqrt(a[i,1]*a[i,1]+a[i,2]*a[i,2])
+  if(a[i,3]<1)
+    a[i,4]<-1
+  else
+    a[i,4]<-0
+}
+
+4*sum(a[,4])/N
+
+
+
+#原始方法
